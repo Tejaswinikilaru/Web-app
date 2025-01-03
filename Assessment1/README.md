@@ -36,13 +36,12 @@ A simple Flask-based web application to manage a to-do list. The application sup
    
    
    
-  4.Open the app in your browser:
-   http://localhost:5000
+  **Open the app in your browser**:  http://localhost:5000
   
 ## Deployment Instructions
 Steps to deploy the app on AWS EC2 instance:
 
-**Step1**: Create an Ec2 instance
+## **Step1**: Create an Ec2 instance
 
 Log into your AWS Management Console.
 
@@ -53,12 +52,15 @@ Configure security groups to allow inbound traffic on port 22 (SSH), 80 (HTTP), 
 Create a key pair and save it to your local machine. This will be used for SSH access
 
 
-**Step 2** SSH into the EC2 Instance:
 
-**ssh -i privatekey.pem ubuntu@<your-ec2-public-ip>**
+
+## **Step 2** SSH into the EC2 Instance:
+**ssh -i privatekey.pem ubuntu@your-ec2-public-ip**
 																					
 
-**Step 3:** Install dependencies on EC2
+
+
+## **Step 3:** Install dependencies on EC2
 
 Install Python and pip:
 
@@ -69,14 +71,17 @@ sudo apt install python3-pip nginx -y**
 Clone the repository and set up a virtual environment and install flask
 
 
-**Step 4:** Transfer your application code
+
+## **Step 4:** Transfer your application code
 Use scp to copy your project folder to your EC2 instance:
  **scp -i your-keypair.pem -r /path/to/your/application ubuntu@<your-ec2-public-ip>:/home/ubuntu/** 
 
 
-**Step 5:** Configure Gunicorn and Nginx.
+## **Step 5:** 
+Configure Gunicorn and Nginx.
 
-**Step 6:** Set up HTTPS with a self-signed certificate.
+## **Step 6:**
+ Set up HTTPS with a self-signed certificate.
 
 
 ## Making the application persistent
@@ -88,6 +93,7 @@ Use scp to copy your project folder to your EC2 instance:
 
 ## Challenges Faced
 Challenge: Flask installation conflicts.
+
 Solution: Used a virtual environment to isolate dependencies.
 
 ## Future Improvements
